@@ -19,6 +19,6 @@ contract TestMetacoin {
 
     uint expected = 0;
 
-    Assert.equal(meta.balanceOf(tx.origin), expected * (10 ** uint256(meta.decimals())), "Owner should have 100000 MetaCoin initially");
+    Assert.equal(meta.balanceOf(tx.origin), 0, "Owner should have 100000 MetaCoin initially");
   }
 }
