@@ -49,18 +49,18 @@ contract('MetaCoin', function (accounts) {
 });
 
 contract("MultiBalances", function (accounts) {
-  //it("should get the total balance 100000", function () {
-  //  var meta;
-  //
-  //  return MetaCoin.deployed().then(function (instance) {
-  //    meta = instance;
-  //    return MultiBalances.deployed().then(function (instance) {
-  //      return instance.getBalances.call(meta, accounts);
-  //    }).then(function (sum) {
-  //      total = sum.toNumber();
-  //
-  //      assert.equal(total, 10000 * Math.pow(10, 8), "Total amount should be 10000");
-  //    });
-  //  });
-  //});
+  it("should get the total balance 100000", function () {
+    var meta;
+
+    return MetaCoin.deployed().then(function (instance) {
+      meta = instance;
+      return MultiBalances.deployed().then(function (instance) {
+        return instance.getBalances.call(meta.address, accounts);
+      }).then(function (sum) {
+        total = sum.toNumber();
+
+        assert.equal(total, 100000 * Math.pow(10, 8), "Total amount should be 10000");
+      });
+    });
+  });
 });
